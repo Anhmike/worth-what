@@ -99,3 +99,12 @@ input {
     left: 48%;
     height: 20%;
 }
+
+h2, #total-worth {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    font-size: 35px;
+    color: #414042;
+}
