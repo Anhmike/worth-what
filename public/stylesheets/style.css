@@ -9,6 +9,10 @@ body {
     height: 400px;
 }
 
+#token{
+    display: none;
+}
+
 #person-1,
 #person-2,
 #person-3 {
