@@ -46,16 +46,46 @@ function generateInput(imageUrl, id, value) {
         input
     ]).then(
         function(response) {
-            console.log(response);
+            console.log(prettyjson.render(response));
         },
         function(error) {
-            console.error(error);
+            console.error("ERROR", error);
         }
     )
 }
 
-var file = fs.readFileSync('Category1', 'utf8');
-var lines = file.split('\n');
-for (var i=0; i<lines.length; i++) {
-    generateInput(lines[i], 'superRich', true);
+var files = [
+    {
+        fileName: 'Category1',
+        category: 'superRich'
+    },
+    {
+        fileName: 'Category2',
+        category: 'rich'
+    },
+    {
+        fileName: 'Category3',
+        category: 'middleClass'
+    }, 
+    {
+        fileName: 'Category4',
+        category: 'poor'
+    },
+    {
+        fileName: 'Category5',
+        category: 'homeless'
+    }
+]
+
+for (var i=0; i<files.length; i++) {
+    var file,
+        lines;
+    var fileName = files[i].fileName;
+    var category = files[i].category;
+
+    file = fs.readFileSync(fileName, 'utf8');
+    lines = file.split('\n');
+    for (var j=0; j<lines.length; j++) {
+        generateInput(lines[j], category, true);
+    }
 }
