@@ -1,11 +1,18 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Clarifai = require('./training/clarifai-2.0.2/index');
+Clarifai.initialize({
+    'clientId': process.env.CLIENT_ID,
+    'clientSecret': process.env.CLIENT_SECRET,
+    'apiEndpoint': 'https://api2-prod.clarifai.com'
+});
 
-var routes = require('./routes/index');
+var routes = require('./routes/index')(Clarifai);
 var users = require('./routes/users');
 
 var app = express();

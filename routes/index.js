@@ -2,8 +2,20 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+function useClarifai(Clarifai) {
+    router.get('/', function(req, res, next) {
+        Clarifai.getToken().then(
+          function(response) {
+            res.render('index', { token: response });
+            console.log(response);
+          },
+          function(err){
+            res.render('index', { token: null });
+          }
+        );
+    });
 
-module.exports = router;
+    return router;
+}
+
+module.exports = useClarifai;
