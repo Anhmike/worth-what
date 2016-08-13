@@ -1,5 +1,6 @@
 require('dotenv').config();
 var Clarifai = require('./clarifai-2.0.2/index');
+var getTags = require('./lib/getTags');
 //model id: b778c20f3d494402b43e79dde1a2a53b
 
 Clarifai.initialize({
@@ -7,35 +8,6 @@ Clarifai.initialize({
     'clientSecret': process.env.CLIENT_SECRET,
     'apiEndpoint': 'https://api2-prod.clarifai.com'
 });
-
-function getTags(concept) {
-    return [{
-        "concept": {
-            'id': 'superRich'
-        }, 
-        'value': (concept === 'superRich')
-    }, {
-        "concept": {
-            'id': 'rich'
-        }, 
-        'value': (concept === 'rich')
-    }, {
-        "concept": {
-            'id': 'middleClass'
-        }, 
-        'value': (concept === 'middleClass')
-    }, {
-        "concept": {
-            'id': 'poor'
-        }, 
-        'value': (concept === 'poor')
-    }, {
-        "concept": {
-            'id': 'homeless'
-        }, 
-        'value': (concept === 'homeless')
-    }];
-}
 
 Clarifai.addInputs([{
     "data": {
@@ -46,7 +18,6 @@ Clarifai.addInputs([{
     },
     "id": "some-id"
 }]).then(function(response) {
-    console.log(response);
     Clarifai.createModel({
         'name': 'what-worth',
         'concepts': [{
