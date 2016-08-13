@@ -71,8 +71,13 @@ span.mdl-layout-title.title {
 }
 
 .btn {
-    width: 50%;
+    width: 100%;
     background-color: #478BFA;
     height: 100%;
     border: 1px solid white;
+}
+
+#photo-icon {
+    height: 20%;
+    padding-bottom: 2%;
 }
