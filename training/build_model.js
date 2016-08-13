@@ -1,8 +1,8 @@
 require('dotenv').config();
-var Clarifai = require('./clarifai-2.0.2/index');
 var getTags = require('./lib/getTags');
 //model id: b778c20f3d494402b43e79dde1a2a53b
 
+var Clarifai = require('./clarifai-2.0.2/index');
 Clarifai.initialize({
     'clientId': process.env.CLIENT_ID,
     'clientSecret': process.env.CLIENT_SECRET,
