@@ -1,4 +1,1 @@
-function app() {
-    this.start = 'test webpack';
-}
-console.log('Works');
+console.log('Hey')

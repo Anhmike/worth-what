@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.title-images {
+    position: relative;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+}
+
+#person-1,
+#person-2,
+#person-3 {
+    position: absolute;
+    width: 200px;
+}
+
+#person-1 {
+    top: 25px;
+    left: 87.5px;
+}
+
+#person-2 {
+    top: 150px;
+    left: 25px;
+}
+
+#person-3 {
+    top: 150px;
+    left: 175px;
+}
+
+.sub-title {
+    padding-left: 90px;
+    padding-bottom: 10px;
+    font-weight: 50;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.coin-logo {
+    width: 30px;
+    padding-right: 10px;
+}
+
+span.mdl-layout-title.title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 4.5px;
+    font-size: 30px;
+    color: #414042;
+}
+
+.header-row,
+.mdl-layout__drawer-button {
+    background-color: white !important;
+    color: #414042 !important;
 }

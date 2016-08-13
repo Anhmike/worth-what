@@ -1,8 +1,29 @@
 doctype html
 html
   head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet',type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='/stylesheets/material.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='/js/material.min.js')
     script(type='text/javascript', src='/js/app.bundle.js')
   body
-    block content
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header
+        .mdl-layout__header-row.header-row
+          img.coin-logo(src='/images/coin_logo.png')
+          span.mdl-layout-title.title worth what?
+        .header-row
+          .sub-title Find out how rich you look!
+          .mdl-layout-spacer
+          nav.mdl-navigation.mdl-layout--large-screen-only
+            a.mdl-navigation__link(href="/about") About
+      .mdl-layout__drawer
+        span.mdl-layout-title.title worth what?
+        nav.mdl-navigation
+          a.mdl-navigation__link(href="/about") About
+      main.mdl-layout__content
+        .page-content
+          block content

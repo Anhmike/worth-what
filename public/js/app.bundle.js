@@ -44,10 +44,7 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	function app() {
-	    this.start = 'test webpack';
-	}
-	console.log('Works');
+	console.log('Hey');
 
 /***/ }
 /******/ ]);
