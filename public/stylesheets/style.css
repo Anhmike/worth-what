@@ -112,3 +112,11 @@ h2, #total-worth, h1 {
     font-size: 35px;
     color: #414042;
 }
+
+#image-container {
+    width: 100%;
+}
+
+#pic {
+    width: 100%;
+}
