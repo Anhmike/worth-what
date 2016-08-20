@@ -1,4 +1,3 @@
-require('dotenv').config();
 var Clarifai = require('./clarifai-2.0.2/index');
 var getTags = require('./lib/getTags');
 var modelId = "b778c20f3d494402b43e79dde1a2a53b";
